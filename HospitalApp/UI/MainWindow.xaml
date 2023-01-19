@@ -1,0 +1,116 @@
+﻿<Window x:Class="HospitalApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalApp"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="350" Width="600" Icon="/Resources/icon.png">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="4" BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="LightCyan"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="Cyan" Offset="0"/>
+                    <GradientStop Color="Cyan" Offset="0.6"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image HorizontalAlignment="Left" Height="70" Margin="1,-8,0,0" VerticalAlignment="Top" Width="100" Source="/Resources/icon.png"/>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="Cyan" Offset="0"/>
+                    <GradientStop Color="Cyan" Offset="0.6"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="Cyan" Offset="0"/>
+                    <GradientStop Color="Cyan" Offset="0.6"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock HorizontalAlignment="Center">Авторизация</TextBlock>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <TextBlock >Логин:</TextBlock>
+            <TextBox x:Name="EmailBox" Height="30" Width="230" HorizontalAlignment="Right"></TextBox>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <TextBlock >Пароль:</TextBlock>
+            <TextBox x:Name="PasswordBox" Height="30" Width="230" HorizontalAlignment="Right"></TextBox>
+            <PasswordBox x:Name="PasswordBoxPass" FontSize="25" Height="30" Width="230" HorizontalAlignment="Right"></PasswordBox>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="3">
+            <Button x:Name="BtnNext" FontSize="18" Width="150" Height="30" VerticalAlignment="Top" Click="BtnNext_Click">Войти</Button>
+            <CheckBox x:Name="Checker" Content="Показать пароль" HorizontalAlignment="Left" Margin="112,37,0,0" VerticalAlignment="Top" Checked="Checker_Clicked" Unchecked="Checker_UnClicked"/>
+        </Grid>
+    </Grid>
+</Window>
